@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 24% 15%;
+    --foreground: 210 40% 98%;
+    --card: 240 24% 15%;
+    --card-foreground: 210 40% 98%;
+  }
+
+  body {
+    background-color: #F4F7FE;
+    color: #1F2937;
+    font-family: "PingFang SC", "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
