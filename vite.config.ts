@@ -25,9 +25,13 @@ export default defineConfig(({ command }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vue-core': ['vue', 'vue-router', 'pinia'],
-          'vant': ['vant']
+        manualChunks(id) {
+          if (id.includes('node_modules/vue') || id.includes('node_modules/vue-router') || id.includes('node_modules/pinia')) {
+            return 'vue-core'
+          }
+          if (id.includes('node_modules/vant')) {
+            return 'vant'
+          }
         }
       }
     }
