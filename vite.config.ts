@@ -21,5 +21,15 @@ export default defineConfig(({ command }) => ({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vue-core': ['vue', 'vue-router', 'pinia'],
+          'vant': ['vant']
+        }
+      }
+    }
   }
 }))
